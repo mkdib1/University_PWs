@@ -6,7 +6,7 @@ Vinted Notifiche Bot
 
 import requests
 import time
-from prefect import flow, task
+import prefect
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -16,13 +16,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
-# print(dir(prefect))
+print(dir(prefect))
+
 # Configurazione Telegram
 TELEGRAM_TOKEN = '7247285493:AAFDjrLcO3gzMxOW54ZLp38sigavM45hPoo'  # Sostituisci con il token del bot
 CHAT_ID = '23791879'  # Sostituisci con il tuo Chat ID
 
 # Funzione per inviare un messaggio su Telegram
-@task
+@prefect.task
 def send_telegram_message(message):
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     payload = {'chat_id': CHAT_ID, 'text': message}
@@ -34,7 +35,7 @@ def send_telegram_message(message):
 
 
 # Funzione di ricerca con Selenium
-@task
+@prefect.task
 def search_vinted(search_query, max_price):
     # Configura le opzioni di Chrome
     chrome_options = Options()
@@ -112,7 +113,7 @@ def search_vinted(search_query, max_price):
         driver.quit()
         return []
 
-@flow
+@prefect.flow(log_prints=True, name="Tracker")
 def main():
     
     send_telegram_message("Ciao! Questo è un messaggio di prova dal tuo bot Telegram.")
