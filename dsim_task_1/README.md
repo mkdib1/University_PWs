@@ -11,16 +11,16 @@
 |     |- class.csv
 |  |- mod/                                      # model directory
 |     |- best_model_94.model 			# model to load for predictions
-|     |- scaler.pkl 				# scaler for normalization
-|  |- src/ (source code)
-|     |- demo.py   				# main script
-|     |- preprocessing.py 			# data processing functions
-|  |- .env 					# environment variables
-|  |- requirements.txt 				# installation guidelines
+|     |- scaler.pkl 				# scaler for data normalization
+|  |- src/  					# source code dir
+|     |- demo.py   				# application script
+|     |- preprocessing.py 			# data processing functions called in demo.py
+|  |- .env 					# environment variables setting
+|  |- requirements.txt 				# libraries and packages installation guidelines
 |  |- README.md 				# this file
 ```
    
 
 # Set env var
 After downloading the folder, please enter the .env and type the right local path 
-in BASE_DIR in order to SET env variables properly
+in `BASE_DIR` variable in order to SET env variables properly
