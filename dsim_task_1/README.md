@@ -22,5 +22,4 @@
    
 
 # Set env var
-After downloading the folder, please enter the .env and type the right local path 
-in `BASE_DIR` variable in order to SET env variables properly
+After downloading the folder, please open the .env file and set the `BASE_DIR` variable by replacing the default string with your local path.
