@@ -1,4 +1,5 @@
 # Structure
+```
 |- dsim_task_1/
 |  |- data/ (contains 2 data subfolders)
 |     |- eeg_test/ (contains 50 .csv of test EEG tracings for predictions)
@@ -17,6 +18,7 @@
 |  |- .env (environment variables)
 |  |- requirements.txt (installation guidelines)
 |  |- README.md (this file) 
+```
    
 
 # Set env var
