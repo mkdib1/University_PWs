@@ -16,8 +16,8 @@
 |     |- demo.py   				# application script
 |     |- preprocessing.py 			# data processing functions called in demo.py
 |  |- utils/  					# support file dir
-|     |- dataset_building.ipynb   		# building a pandas dataframe and writing eeg.csv, starting from extracting data from zip folders after downloading
-|     |- eeg.csv  				# arrenged dataset
+|     |- dataset_building.ipynb   		# notebook to extract data, build a pandas.dataframe and save it as eeg.csv
+|     |- eeg.csv  				# arranged dataset
 |  |- .env 					# environment variables setting
 |  |- requirements.txt 				# libraries and packages installation guidelines
 |  |- README.md 				# this file
