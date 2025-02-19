@@ -44,21 +44,21 @@ drive.mount('/content/drive', force_remount=True)
 ```
 
 ## Running the best model
-To test the pre-trained model, you need to access the `models.zip` file from Google Drive. The pre-trained model files are available at this link: [Models Folder](https://drive.google.com/drive/folders/your-shared-folder-id).
+To test the pre-trained model, you need to access the `models.zip` file from Google Drive. The pre-trained model file is available at this link: [Models.zip](https://drive.google.com/file/d/1dcA5uFx_Dw5bsPNNhLIa1Xz1Bxh72q-n/view?usp=drive_link).
 
 Follow these steps to download and use the pre-trained model:
 
-1. Access the models.zip file from the shared Google Drive link
-2. Download the file to your Google Drive or directly to your Colab environment
+1. Download the models.zip file from the shared Google Drive link
+2. Upload it to your Colab environment or to your own Google Drive
 3. Unzip and load the model:
 
 ```python
-# Option 1: If you've added the file to your Google Drive
+# Option 1: If you've uploaded the file to your Google Drive
 !cp "/content/drive/MyDrive/models.zip" ./
 !unzip models.zip
 
-# Option 2: Directly download from the shared link (replace with the actual direct download link)
-!wget "https://drive.google.com/uc?export=download&id=your-file-id" -O models.zip
+# Option 2: Directly download from the shared link
+!gdown 1dcA5uFx_Dw5bsPNNhLIa1Xz1Bxh72q-n
 !unzip models.zip
 
 # Load the pre-trained model
@@ -66,4 +66,3 @@ model = keras.models.load_model('./model_M.keras')
 ```
 
 The model can then be used to make predictions on new images from the planets and moons dataset.
-
